@@ -1,0 +1,45 @@
+hush
+
+setcps (75/240)
+
+import Sound.Tidal.Chords
+
+d1 $ fast 2                                   --arp
+  $ n "[0|-12|-5] [3|5|7] [10|12|15] [3|5|7]? [17|14|12] [9|10|15] [3|7|24|22] [12|19]"
+  # s "supersquare"
+  # semitone 0
+  # lpf 1000
+  # lpq 0.2
+  # room 0.8
+  # size 0.6
+  # gain 0.5
+
+d2 $ s "[[808bd 808bd] ~ ~ [808bd 808bd]] ~"  --kick
+  # shape 0.8
+  # gain 0.65
+
+d3 $ s "[~ 808sd]!2" <| n (run 4)             --snare
+  # gain 0.8
+
+d4 $ n "[[0 0] ~ ~ [0 0]] ~"                  --bass
+  # s "supersaw"
+  # octave 3
+  # semitone 0
+  # lpf 300
+  # gain 0.75
+
+d5 $ fast 4                                   --delayed chords
+  $ n "[c'min11'5'd3|c'min9'd2|c'min11'i2|~]"
+  # sound "[supervibe|superfork]"
+  # hpf 550
+  # delay 0.5
+  # delayfb 0.5
+  # delayt 3
+  # room 0.6
+  # gain 0.7
+
+d6 $ n "[c'min11'o]"
+  # sound "supersaw"
+  # lpf 700
+  # room 0.9
+  # gain 0.8
