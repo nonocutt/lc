@@ -1,0 +1,58 @@
+hush
+
+setcps (180/240)    -- DO THIS FIRST
+
+d1 $ randslice 16   -- my breakbeat sample, slice to 16 parts
+  $ n ("1 [2 3] 2 [3 5] 4 6 7 8" |+ irand 7)  -- randomly sort the playback
+  # s "break"
+  # gain 0.8
+
+d2 $ up ("-8? -5? 0? [-2|-1] ~ ~ -3? ~" |+ irand 4) -- transpose the sample
+  # s "chordstab"   -- minor piano stab, add delay & reverb
+  # hpf 300
+  # delay 0.5
+  # delayfb 0.6
+  # delayt 0.25
+  # gain 0.87
+  # room 0.6
+
+d3 $ slow 1         -- semi-random bass pattern
+  $ palindrome
+  $ note (scale "minor" "3 [5|6]? ~ [8|9] 11? [2 9]? [7|13] ~" |+ irand 4)
+  # s "bass1:10"
+  # distort 0.3
+  # gain 0.75
+  # lpf 300
+
+
+d4 $ slow 4         -- chiptune sfx
+  $ s "sfx:1"
+  # gain 0.75
+  # delay 0.6
+  # delayfb 0.8
+  # delayt 0.666
+  # room 0.4
+
+d5 $ slow 8         -- pikachu sfx
+  $ n ("~ 0 ~ ~")
+  # s "sfx:3"
+  # delay 0.6
+  # delayfb 0.6
+  # delayt 0.5
+  # room 0.7
+  # gain 0.8
+
+mute 1
+unmute 1
+
+mute 2
+unmute 2
+
+mute 3
+unmute 3
+
+mute 4
+unmute 4
+
+mute 5
+unmute 5
