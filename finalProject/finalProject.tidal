@@ -1,0 +1,77 @@
+hush
+
+setcps (140/240)    -- DO THIS FIRST
+
+d1 $ n ("[0 ~]!2")    -- kick
+  # s "gbkick:1"
+  # gain 0.8
+
+-- d1 $ n ("[0 0] [~ 0] 0 ~")
+--   # s "gbkick:2"
+--   # gain 0.75
+
+d2 $ n ("[~ 0]!2")    -- snare
+  # s "gbsnare:4"
+  # gain 0.9
+
+-- d2 $ n ("[~ 0]!2")
+--   # s "gbsnare:1"
+--   # gain 0.75
+
+d3 $ n ("[0!4] [0 0 0 1]")    -- hihat
+  # s "gbhat"
+  # gain 0.85
+
+-- d3 $ n ("0!16")
+--   # s "gbhat"
+--   # gain 0.78
+
+d4 $ up ("[4 2 -1 4] [4 -1 2 4]")   -- triangle bass
+  # s "triangle"
+  # gain 1
+
+d5 $ palindrome
+  $ up ("[[-1|4|9] [2|7|11]]*3")    -- square triplets
+  # s "square"
+  # gain 0.7
+  # delay 0.2
+  # delayfb 0.6
+  # delayt 0.666
+
+d6 $ fast 2                         -- saw arp
+  $ up "~ [[[4|-8|-1] [7|9|11] [14|16|19] [7|9|11]]|[[21|18|16] [13|14|19] [7|11|28|26] [16|23|4]]]"
+  # s "sawtooth"
+  # gain 0.9
+
+d7 $ palindrome                     -- pulse melody
+  $ note (scale "dorian" "[0|1|2|3|4|5|6]*8?" +4)   -- 16
+  # s "supersquare"
+  # voice 0.85
+  # semitone 0
+  # pitch1 3
+  # octave (choose [5,6])
+  # gain 0.55
+  # delay 0.2
+  # delayt 0.333
+  # delayfb 0.6
+
+mute 1
+unmute 1
+
+mute 2
+unmute 2
+
+mute 3
+unmute 3
+
+mute 4
+unmute 4
+
+mute 5
+unmute 5
+
+mute 6
+unmute 6
+
+mute 7
+unmute 7
