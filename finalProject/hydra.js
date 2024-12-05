@@ -43,7 +43,9 @@ shape([4,5,6].fast(0.1).smooth(1),0.000001,[0.2,0.7].smooth(1))
   .contrast(5)                  // added contrast to make it darker
   .out(o3)                      // I did not make this layer. I copied it from Nesso's "clouds of passage"
 
-src(o3).add(o2).add(o1)
+src(o3)
+  // .add(o2)
+  // .add(o1)
   .brightness(-0.5)
   .pixelate(160,120)
   .out(o0)                      // final output

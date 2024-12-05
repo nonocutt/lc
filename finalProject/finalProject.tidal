@@ -34,6 +34,7 @@ d5 $ palindrome
   $ up ("[[-1|4|9] [2|7|11]]*3")    -- square triplets
   # s "square"
   # gain 0.7
+  # pan (slow 6 sine)
   # delay 0.2
   # delayfb 0.6
   # delayt 0.666
@@ -41,6 +42,7 @@ d5 $ palindrome
 d6 $ fast 2                         -- saw arp
   $ up "~ [[[4|-8|-1] [7|9|11] [14|16|19] [7|9|11]]|[[21|18|16] [13|14|19] [7|11|28|26] [16|23|4]]]"
   # s "sawtooth"
+  -- # pan (slow 4 sine)
   # gain 0.9
 
 d7 $ palindrome                     -- pulse melody
@@ -50,6 +52,7 @@ d7 $ palindrome                     -- pulse melody
   # semitone 0
   # pitch1 3
   # octave (choose [5,6])
+  -- # pan (slow 1 sine)
   # gain 0.55
   # delay 0.2
   # delayt 0.333
